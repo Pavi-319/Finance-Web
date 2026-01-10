@@ -1,0 +1,231 @@
+.activity-page .section-title {
+    margin-bottom: 2rem;
+}
+
+/* Activity Stats */
+.activity-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+}
+
+.activity-stats .stat-item {
+    text-align: center;
+    padding: 1.5rem;
+}
+
+.stat-number {
+    display: block;
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 0.25rem;
+}
+
+.stat-text {
+    font-size: 0.875rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Timeline */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.timeline-item {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    animation: slideUp 0.6s ease backwards;
+}
+
+.timeline-marker {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.marker-dot {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--glass-bg);
+    border: 3px solid var(--text-muted);
+    z-index: 1;
+    transition: var(--transition-normal);
+}
+
+.timeline-item.completed .marker-dot {
+    background: var(--accent-emerald);
+    border-color: var(--accent-emerald);
+}
+
+.timeline-item.in-progress .marker-dot {
+    background: var(--accent-gold);
+    border-color: var(--accent-gold);
+    animation: pulse 1.5s infinite;
+}
+
+.marker-line {
+    position: absolute;
+    top: 20px;
+    width: 2px;
+    height: calc(100% + 2rem);
+    background: var(--glass-border);
+}
+
+.timeline-item:last-child .marker-line {
+    display: none;
+}
+
+/* Timeline Content */
+.timeline-content {
+    flex: 1;
+    padding: 1.5rem;
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+}
+
+.timeline-date {
+    font-weight: 700;
+    color: var(--accent-gold);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.timeline-badges {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.type-badge {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+    background: var(--glass-bg);
+    color: var(--text-secondary);
+    border: 1px solid var(--glass-border);
+}
+
+.status-badge {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.status-badge.completed {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-emerald);
+}
+
+.status-badge.in-progress {
+    background: rgba(245, 158, 11, 0.15);
+    color: var(--accent-gold);
+}
+
+.status-badge.upcoming {
+    background: var(--glass-bg);
+    color: var(--text-muted);
+}
+
+.timeline-content h3 {
+    color: var(--text-primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+}
+
+.timeline-content>p {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+}
+
+/* Timeline Tasks */
+.timeline-tasks {
+    padding-top: 1rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+.timeline-tasks h4 {
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.75rem;
+}
+
+.timeline-tasks ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.timeline-tasks li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.task-check {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-size: 0.75rem;
+    background: var(--glass-bg);
+    color: var(--text-muted);
+    flex-shrink: 0;
+}
+
+.task-check.checked {
+    background: rgba(16, 185, 129, 0.15);
+    color: var(--accent-emerald);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .activity-stats {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+
+    .activity-stats .stat-item {
+        padding: 1rem;
+    }
+
+    .stat-number {
+        font-size: 2rem;
+    }
+
+    .timeline-item {
+        gap: 1rem;
+    }
+
+    .timeline-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .timeline-content {
+        padding: 1.25rem;
+    }
+}
