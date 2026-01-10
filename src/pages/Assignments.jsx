@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react'
 import './Assignments.css'
 
 const Assignments = () => {
+    // Get base URL for proper path resolution in production
+    const baseUrl = import.meta.env.BASE_URL || '/'
+
     // Pre-loaded files from the user's directory
     const defaultFiles = [
         {
@@ -12,7 +15,7 @@ const Assignments = () => {
             size: '55.5 KB',
             category: 'Assignment',
             date: '2026-01-10',
-            downloadUrl: '/files/ANALYSIS%20OF%20INVESTMENT%20AVENUES-ASSIGNMENT%201.docx',
+            downloadUrl: `${baseUrl}files/ANALYSIS%20OF%20INVESTMENT%20AVENUES-ASSIGNMENT%201.docx`,
         },
         {
             id: 2,
@@ -22,7 +25,7 @@ const Assignments = () => {
             size: '18.9 KB',
             category: 'Assignment',
             date: '2026-01-10',
-            downloadUrl: '/files/INVESTMENT%20ASSIGNMENT%202.docx',
+            downloadUrl: `${baseUrl}files/INVESTMENT%20ASSIGNMENT%202.docx`,
         },
         {
             id: 3,
@@ -32,7 +35,7 @@ const Assignments = () => {
             size: '1.2 MB',
             category: 'Presentation',
             date: '2026-01-10',
-            downloadUrl: '/files/INVESTMENT%20GURU-CATHIEE%20WOOD.pptx',
+            downloadUrl: `${baseUrl}files/INVESTMENT%20GURU-CATHIEE%20WOOD.pptx`,
         },
     ]
 
